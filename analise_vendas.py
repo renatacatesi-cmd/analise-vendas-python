@@ -28,3 +28,18 @@ por_produto.to_csv(saida / "receita_por_produto.csv", index=False)
 
 print(indicadores.to_string(index=False))
 print("\nReceita por região:\n", por_regiao.to_string(index=False))
+
+def barras_svg(titulo, dados, cor):
+    largura, altura, margem = 560, 330, 55
+    maximo = max(dados.values())
+    espacamento = (largura - 2 * margem) / len(dados)
+    partes = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{largura}" height="{altura}">', '<rect width="100%" height="100%" fill="#F7FAFC"/>', f'<text x="{largura/2}" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#16324F">{titulo}</text>']
+    for i, (rotulo, valor) in enumerate(dados.items()):
+        h = valor / maximo * 210
+        x = margem + i * espacamento + 12
+        y = 270 - h
+        partes += [f'<rect x="{x}" y="{y}" width="{espacamento-24}" height="{h}" rx="4" fill="{cor}"/>', f'<text x="{x+(espacamento-24)/2}" y="{y-8}" text-anchor="middle" font-family="Arial" font-size="11">R$ {valor:,.0f}</text>', f'<text x="{x+(espacamento-24)/2}" y="292" text-anchor="middle" font-family="Arial" font-size="10">{rotulo}</text>']
+    partes.append('</svg>')
+    return ''.join(partes)
+
+(BASE / "dashboard_vendas.svg").write_text(barras_svg("Receita por região", dict(zip(por_regiao["regiao"], por_regiao["receita"])), "#2878B5"), encoding="utf-8")
