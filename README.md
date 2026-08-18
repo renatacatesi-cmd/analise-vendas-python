@@ -42,3 +42,7 @@ O programa lê `vendas_exemplo.csv`, calcula os indicadores, grava tabelas em `r
 ## Observação
 
 Todos os dados deste repositório são fictícios e foram criados exclusivamente para demonstração.
+
+## Qualidade e contexto de negócio
+
+Execute `python validacao_dados.py` antes da análise para verificar campos obrigatórios, valores inválidos e duplicidades. O contexto gerencial e o impacto esperado estão documentados em `CASO_NEGOCIO.md`.
