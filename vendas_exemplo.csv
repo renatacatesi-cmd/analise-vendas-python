@@ -1,0 +1,11 @@
+data,pedido_id,regiao,categoria,produto,quantidade,preco_unitario
+2026-01-05,P001,Sudeste,Tecnologia,Monitor,2,950
+2026-01-08,P002,Sul,Escritório,Cadeira,3,620
+2026-01-11,P003,Nordeste,Tecnologia,Notebook,1,4200
+2026-01-17,P004,Sudeste,Escritório,Mesa,2,880
+2026-02-03,P005,Centro-Oeste,Tecnologia,Teclado,5,210
+2026-02-12,P006,Sul,Tecnologia,Monitor,3,950
+2026-02-18,P007,Nordeste,Escritório,Cadeira,4,620
+2026-03-02,P008,Sudeste,Tecnologia,Notebook,2,4200
+2026-03-10,P009,Centro-Oeste,Escritório,Mesa,1,880
+2026-03-21,P010,Sul,Tecnologia,Teclado,6,210
